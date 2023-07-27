@@ -12,6 +12,16 @@
         android:supportsRtl="true"
         android:theme="@style/Theme.BadParcel"
         tools:targetApi="31">
+        <service
+            android:name=".AuthenticatorService"
+            android:enabled="true"
+            android:exported="true">
+            <intent-filter>
+                <action android:name="android.accounts.AccountAuthenticator"/>
+            </intent-filter>
+            <meta-data android:name="android.accounts.AccountAuthenticator" android:resource="@xml/authenticator"/>
+        </service>
+
         <activity
             android:name=".MainActivity"
             android:exported="true">
